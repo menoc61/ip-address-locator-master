@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="PhoneInfoGet">
+    <meta name="description" content="website that lets you track ip address, track location of IP address quickly">
+    <meta name="keywords" content="ip,locator,ip-locator-,ip,address finder,address,what is my ip ?,what's my ip,my ip">
+    <meta name="robots" content="index, nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="2 days">
+    <meta name="author" content="MenoCorp">
+
+    <title>PhoneInfoGet</title>
+    {% load static %}
+    <!--local stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  <!--Jquery CDN-->
+    <!--Bootstrap CDN-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!--font awesome CDN-->
+    <script src="https://kit.fontawesome.com/5de3ed83f2.js" crossorigin="anonymous"></script>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{% static 'image/favicon.png' %}">
+    
+
+    <!--Navigation Bar-->
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "> 
+     <!--navbar toggle icon-->       <i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i>
+
+          </span>
+        </button>
+        <!--navbar brand name-->
+        <a class="navbar-brand text-white" href="#">PhoneInfoGet[IP]</a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <form class="form-inline my-2 my-lg-0 ml-auto" method="GET">
+              
+            <input class="form-control mr-sm-2" autocomplete="off" name="ip_address" id="ip_address" type="text" placeholder="Search IP" aria-label="Search" required>
+            <button class="btn btn-outline-warning mr-sm-2 my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <button class="btn btn-dark my-2  my-sm-0" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-terminal" viewBox="0 0 16 16">
+              <path d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"/>
+              <path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12z"/>
+            </svg>
+            shell
+          </button>
+        </div>
+      </nav>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="container">
+            <br>
+    <h3 class="text-center detection">IP Address Detected : <b>{{ data.ip }}</b></h3>
+    <br>
+</div>
+    </div>
+
+<div class="container-fluid">
+  <center>
+    <!--table to show IP's data-->
+<table class="table table-hover table-responsive-md text-center">
+        
+    <thead>
+    <tr>   
+            <th class="text-light">Attributes</th> 
+            <th class="text-light">Data</th>
+
+    </tr>
+
+    </thead>
+    
+    
+    <tbody>
+    <tr>
+        <td>Address</td>
+        <td>{{data.address}}</td>
+    </tr>
+
+    <tr>
+        <td>City</td>
+        <td><i class="fa fa-info-circle"></i><a href="{{page_link}}" target="_blank" rel="noopener">{{data.city}}</a> </td>
+    </tr>
+    <tr>
+        <td>Postal</td>
+        <td>{{data.postal}}</td>
+    </tr>
+    
+    <tr>
+        <td>Region</td>
+        <td>{{data.raw.region}}</td>
+    </tr>
+    <tr>
+        <td>State</td>
+        <td>{{data.state}}</td>
+    </tr>
+    
+    <tr>
+        <td>Country</td>
+        <td>{{data.country}}</td>
+    </tr>
+    
+    <tr>
+        <td>Organisation</td>
+        <td>{{data.org}}</td>
+    </tr>
+    <tr>
+        <td>Latitude</td>
+        <td>{{data.lat}}</td>
+    </tr>
+
+    <tr>
+        <td>Longitude</td>
+        <td>{{data.lng}}</td>
+    </tr>
+     <tr>
+        <td>Timezone</td>
+        <td>{{data.raw.timezone}}</td>
+    </tr>
+    
+</tbody>
+    
+</table>
+</center>
+
+
+
+
+</div>
+<!--Google Map Embed iframe-->
+  <div class="embed-responsive embed-responsive-21by9">
+    <iframe class="embed-responsive-item" src="{{ map_url }}" title="Google Map Location"allowfullscreen></iframe>
+  </div>     
+    <!--Local js-->
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small pt-3">
+
+    <!-- Footer Elements -->
+    <div class="container">
+  
+      <!-- Grid row-->
+      <div class="row" id="social-media-container" >
+  
+        <!-- Grid column -->
+        {% comment %} <div class="col-md-12 text-center">
+          <div class="mt-3 flex-center">
+  
+            <!-- Facebook -->
+                <a class="fb-ic" href="https://facebook.com/shaikhsajid1111" target="_blank" rel="noopener">
+              <i class="fab fa-facebook-f fa-2x white-text mr-3 fa-lg"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic" href="https://twitter.com/shaikhsajid1111" target="_blank" rel="noopener">
+              <i class="fab fa-twitter white-text mr-3 fa-lg fa-2x"> </i>
+            </a>
+            <!-- Github +-->
+            <a class="git-ic" href="https://github.com/shaikhsajid1111" target="_blank" rel="noopener">
+              <i class="fab fa-github white-text mr-3 fa-lg fa-2x"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic" href="https://instagram.com/shaikhsajid1111" target="_blank" rel="noopener">
+              <i class="fab fa-instagram white-text mr-3 fa-lg fa-2x"> </i>
+            </a>
+            
+          </div>
+        </div> {% endcomment %}
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row-->
+      
+    </div>
+    <!-- Footer Elements -->
+  
+     <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 text-white"> © 2023 Copyright:
+      <a href="mailto:gillemomeni@gmail.com" class="text-warning" target="_blank" rel="noopener"> MenoCorp</a> 
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+
+
+</html>

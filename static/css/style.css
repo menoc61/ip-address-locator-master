@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Barlow+Condensed|Cantarell|Comfortaa|Karla|M+PLUS+1p|Oxygen|Quattrocento+Sans&display=swap');
+/*defining colors variable in root for reusing it*/
+:root{
+    --main-bg-color : #212529;
+    --navbar-font : -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; 
+    --table-font : 'Abel', sans-serif;;
+    --header-font : 'Comfortaa', cursive;
+    --row-font : 'Cantarell', sans-serif;
+}
+html{
+    min-height: 100%;
+    width: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+nav{
+    background-color: var(--main-bg-color) !important;
+}
+.navbar-brand{
+    font-family: var(--navbar-font) !important;    
+}
+.detection{
+    font-family: var(--header-font) !important;
+}
+.detection::selection, .detection > b::selection{
+    color: white;
+    background-color: black;
+}
+tr{
+    font-family: var(--row-font) !important;
+     
+}
+td::selection{
+    color: white;
+    background-color: var(--main-bg-color);
+}
+th::selection{
+    background-color: yellow;
+    color: black;
+}
+thead{
+    background-color: var(--main-bg-color) !important;
+    font-family: var(--table-font) !important;
+}
+.page-footer{
+    background-color: var(--main-bg-color) !important;
+    height: 12vh !important;  
+}
+.fab{
+    text-decoration: none !important;
+    color: white;
+}
+.fab:hover{
+    transform: scale(1.8);
+}
+.fa-instagram:hover{
+    color: #e4405f;
+}
+.fa-facebook-f:hover{
+    color: #3b5999;
+}
+.fa-twitter:hover{
+    color: #55acee;
+}
+.fa-github:hover{
+    color: #131418;
+}
+#social-media-container{
+    display: none;
+}
+.page-footer:hover  #social-media-container{
+    display: block;
+}
+.page-footer:hover{
+    height: 20vh !important;
+}
+
+    /*if screen size is lesser than 768px, phones screen*/
+@media only screen and (max-width: 768px) {
+    .page-footer{
+        height: 15vh !important;
+    }
+}
