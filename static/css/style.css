@@ -2,7 +2,7 @@
 /*defining colors variable in root for reusing it*/
 :root{
     --main-bg-color : #212529;
-    --navbar-font : -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; 
+    --navbar-font : 'Comfortaa', cursive; 
     --table-font : 'Abel', sans-serif;;
     --header-font : 'Comfortaa', cursive;
     --row-font : 'Cantarell', sans-serif;
