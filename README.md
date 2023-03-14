@@ -1,4 +1,4 @@
-# IP Address Locator
+# PhoneInfoGet 
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/shaikhsajid1111/ip-address-locator/graphs/commit-activity)
@@ -9,11 +9,15 @@
 
 
 
-
 ![Screenshot](screenshot/capture.png)
 
 
-
+#installation Guide
+- Download and install the <a href="https://www.python.org/downloads/">lastest python version</a> 
+- python.exe -m pip install --upgrade pip
+-  pip install -r requirement.txt
+- python -m django --version
+- python manage.py runserver 
 
 
 # Features
